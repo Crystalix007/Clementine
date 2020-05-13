@@ -50,7 +50,7 @@ jobs:
           ssh
       - name: cmake
         working-directory: bin
-        steps: >
+        run : >
           cmake ..
           -DWITH_DEBIAN=ON
           -DDEB_ARCH=amd64
@@ -59,7 +59,7 @@ jobs:
           -DENABLE_SPOTIFY_BLOB=OFF
       - name: make
         working-directory: bin
-        steps: make -j2 deb
+        run : make -j2 deb
       - uses: actions/upload-artifact@v2
         with:
           name: release/focal_64
