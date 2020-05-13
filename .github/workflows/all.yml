@@ -48,4 +48,13 @@ jobs:
           -DGETTEXT_MSGMERGE_EXECUTABLE=/usr/local/opt/gettext/bin/msgmerge
           -DGETTEXT_MSGFMT_EXECUTABLE=/usr/local/opt/gettext/bin/msgfmt
           -DGETTEXT_XGETTEXT_EXECUTABLE=/usr/local/opt/gettext/bin/xgettext
+      - name: make
+        working-directory: bin
+        run: make -j2
+      - name: Copy icon files and resources
+        working-directory: bin
+        run: make install
+      - name: Build DMG
+        working-directory: bin
+        run: make dmg
 
