@@ -122,7 +122,7 @@ jobs:
         working-directory: /target/plugins
         run: >
           cp
-          platforms/windows.dll
+          platforms/qwindows.dll
           ${GITHUB_WORKSPACE}/dist/windows/platforms
       - run: mkdir dist/windows/styles
       - name: Copy Qt style plugin DLLs
