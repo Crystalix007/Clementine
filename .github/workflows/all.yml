@@ -108,7 +108,7 @@ jobs:
             Qt5XmlPatterns.dll
             ssleay32.dll
             zlib1.dll
-            ${GITHUB_WORKSPACE}/Clementine/dist/windows
+            ${GITHUB_WORKSPACE}/dist/windows
       - run: mkdir dist/windows/imageformats
       - name: Copy Qt imageformat plugin DLLs
         working-directory: /target/plugins
@@ -116,21 +116,21 @@ jobs:
           cp
           imageformats/qgif.dll
           imageformats/qjpeg.dll
-          ${GITHUB_WORKSPACE}/Clementine/dist/windows/imageformats
+          ${GITHUB_WORKSPACE}/dist/windows/imageformats
       - run: mkdir dist/windows/platforms
       - name: Copy Qt platforms plugin DLLs
         working-directory: /target/plugins
         run: >
           cp
           platforms/windows.dll
-          ${GITHUB_WORKSPACE}/Clementine/dist/windows/platforms
+          ${GITHUB_WORKSPACE}/dist/windows/platforms
       - run: mkdir dist/windows/styles
       - name: Copy Qt style plugin DLLs
         working-directory: /target/plugins
         run: >
           cp
           styles/qwindowsvistastyle.dll
-          ${GITHUB_WORKSPACE}/Clementine/dist/windows/styles
+          ${GITHUB_WORKSPACE}/dist/windows/styles
       - run: mkdir dist/windows/gio-modules
       - name: Copy GIO modules
         run: cp /target/lib/gio/modules/libgiognutls.dll dist/windows/gio-modules
@@ -176,7 +176,7 @@ jobs:
           libgstvolume.dll
           libgstvorbis.dll
           libgstwavparse.dll
-          ${GITHUB_WORKSPACE}/Clementine/dist/windows/gstreamer-plugins
+          ${GITHUB_WORKSPACE}/dist/windows/gstreamer-plugins
       - name: Build Windows installer
         working-directory: dist/windows
         run: makensis clementine.nsi
