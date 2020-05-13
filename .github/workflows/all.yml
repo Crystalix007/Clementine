@@ -31,6 +31,7 @@ jobs:
         run: brew install https://raw.githubusercontent.com/tomahawk-player/homebrew-tomahawkqt5/master/liblastfm.rb
       - name: Fix liblastfm includes
         run: ln -s /usr/local/include/lastfm /usr/local/include/lastfm5
+      - uses: actions/checkout@v2
       - name: cmake
         env:
           PKG_CONFIG_PATH: /usr/local/lib/pkgconfig
