@@ -48,6 +48,7 @@ jobs:
           qttools5-dev-tools
           qttools5-dev
           ssh
+      - uses: actions/checkout@v2
       - name: cmake
         working-directory: bin
         run : >
